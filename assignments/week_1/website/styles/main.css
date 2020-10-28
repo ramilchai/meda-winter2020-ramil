@@ -61,12 +61,82 @@ nav ul li a:active {
 }
 
 
-main {
-
-    height: 500px;
+footer {
+    color: grey; 
+    padding: 16px;
 }
 
-footer {
+footer p {
+    text-align: center;
+ 
+}
 
-    height: 100px;
+/* Contact Page */
+main div#first-column, main div#second-column {
+
+    display: inline-block;
+}
+
+main div#first-column {
+    
+    width: 467px;
+    vertical-align: top;
+}
+
+main div#first-column form label {
+    display: inline-block;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    margin: 12px;
+    text-transform: uppercase;
+}
+
+main div#first-column form input, main div#first-column form textarea {
+    display: inline-block;
+    margin-left: 12px;
+    font-size: 16px;
+    padding: 6px;
+    font-family: 'Poppins', sans-serif;
+    border-width: 0;
+    background-color: #e8e8e8;
+    border-radius: 6px;
+}
+
+main div#first-column form textarea {
+    width: 296px;
+    margin-bottom: 12px;
+}
+
+main div#second-column {
+   
+    width: 232px;
+}
+
+/* Services page */
+main#services-page table {
+    border: 1px solid grey;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+main#services-page table td, main#services-page table th {
+}
+
+main#services-page table thead {
+    background-color: lightcoral;
+}
+
+main#services-page table thead th {
+    padding: 6px;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+main#services-page table tbody td {
+    font-family: 'Poppins', sans-serif;
+    padding: 6px;
+    text-align: right;
+}
+
+main#services-page table .odd-row {
+    background-color: grey;
 }
