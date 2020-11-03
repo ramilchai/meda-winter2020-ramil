@@ -1,0 +1,28 @@
+Why are you taking the back-end class? What are your current expectations of the back-end class?
+	I feel that I like working on JavaScript and algorithm. I look for something more challenging, something I have to take time to figure. I feel that I learn faster this way: when I solve problems. 
+
+Before front-end class, did you have coding experience? What computer language(s) and how long ago?
+	I did take Python class in college. It's probably in 2018. I also learned R and SAS during the time as well. HTML/CSS/JavaScript are relatively new for me but I still feel the same with the logic.
+
+What front-end topics did you find difficult or what did you struggle with?
+	I think JQuery is pretty complicated. I did watch some Youtube Video about DOM method. I feel like, though it's a lot of work, it's easier to understand. 
+
+Did the front-end class meet your expectations? Explain how it did or did not.
+	I still feel that we should've learned Flex and Grid in class. I self-taught these subjects later before we did the last project. I strongly believe that it makes layouting the page much easier.  
+
+Are you switching careers or looking to add skills to your resume? Why?
+	At first, I wanted to add skills to my resume. Now the more I learn about web development, the more I like it. I perhaps look for switching the career to this field. Hopefully I could get a job.
+
+What books or other resources are you depending on outside of class to enhance your learning?
+	I watched a lot of tutorials on Youtube. I did a challenge on HackerRank and Leetcode now. I did it with JavaScript. Sometimes it's so difficult and takes hours to solve the challenge, but I enjoy it.
+
+Other than HTML, CSS, and JavaScript, what other computer languages are you currently learning or are interested in learning? Why?
+	Currently no. JavaScript alone still has so many subjects that I don't know. However, in future, I look onto C++ or C#. I think they are very well-known for using in software engineer. I'm interested in the career. 
+
+Where do you see the industry going in the future?
+	I don't know really. Things move very quick these days. I might have computer writing codes or solve complex problems, or generate algorithm for us. AI is another subject I'm interested. I'll take it on in future.
+
+After taking the back-end class do you plan or have already planned on continuing your learning in tech? What specifically do you plan on focusing?
+	I do. I might look for more advanced bootcamp. Apprenticeship programs from tech companies is also intriguing. I'll try to look for and get in the program after finishing the class. 
+
+

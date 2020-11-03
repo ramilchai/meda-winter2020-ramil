@@ -1,0 +1,34 @@
+The letters are 1628.
+The letters are 291.
+The sentences are 41.
+
+essay.txt
+The letters are 1628.
+The letters are 291.
+The sentences are 41.
+
+ essay.txt 11:33 "
+"The letters are 1628.
+The letters are 291.
+The sentences are 41.
+
+ essay.txt 11:33 
+The letters are 1628.
+The letters are 291.
+The sentences are 41.
+
+essay.txt Tue Nov 03 2020 function getUTCDate() { [native code] } 
+The letters are 1628.
+The letters are 291.
+The sentences are 41.
+
+essay.txt Tue Nov 03 2020 3 
+The letters are 1628.
+The letters are 291.
+The sentences are 41.
+
+essay.txt Tue Nov 03 2020 11:39:01 GMT-0800 (Pacific Standard Time) 
+The letters are 1628.
+The letters are 291.
+The sentences are 41.
+
