@@ -1,0 +1,14 @@
+{
+  "name": "express_server",
+  "version": "1.0.0",
+  "description": "Oue First \u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[r\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Express Server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ramil",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
