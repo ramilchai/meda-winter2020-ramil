@@ -19,3 +19,12 @@ console.log("Express server is now running on " + port);
 
 //Tell express to load the file public_html folder when someone requests / or nothing.
 app.use("/", express.static("public_html/")); 
+
+
+app.post("/sayHello", (request, response) => {
+    console.log("Someone said hello!");
+
+    let responseObject = {};
+
+    response.send(responseObject);
+});
