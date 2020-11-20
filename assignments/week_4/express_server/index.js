@@ -1,6 +1,22 @@
 //Bring in the express package.
 const express = require("express");
 
+const fs = require("fs");
+
+let history = {
+    submissions: []
+};
+
+if (fs.existsSync("history.json")) {
+    let string = fs.readFileSync("history.json", "utf-8");
+    history = JSON.parse(string);
+    console.log("History file found and loaded");
+} else {
+    let json = JSON.stringify(history);
+    fs.writeFileSync("history.json", json, "utf-8");
+    console.log("History file not found! Creating a new one.");
+}
+
 const bodyParser = require("body-parser");
 
 //Run a copy of the express package.
@@ -38,6 +54,17 @@ app.post("/sayHello", (request, response) => {
     let dataFromFront = request.body;
 
     let userNumberChoice = parseInt(dataFromFront.number);
+
+    let historyEntry = {
+        number: userNumberChoice, 
+        winningNumber: winningNumber,
+        timeStamp: Date.now()
+    };
+
+    history.submissions.push(historyEntry);
+
+    fs.writeFileSync("history.json", JSON.stringify(history), "utf-8");
+    
     let userWinner = false;
     let outOfRange = false;
 

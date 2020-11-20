@@ -1,0 +1,11 @@
+/sayHello
+
+What I should send {
+message: string
+number: string
+}
+
+What I expect from the back-end = {
+result: boolean
+error: boolean
+}
