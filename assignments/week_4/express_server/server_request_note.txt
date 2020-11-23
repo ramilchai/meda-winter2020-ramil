@@ -9,3 +9,11 @@ What I expect from the back-end = {
 result: boolean
 error: boolean
 }
+
+/getPreviousEntries
+What I should send = {
+} (an empty object)
+
+What I expect from the back-end = {
+lastestEntries: [{entry Object}, ...]
+}

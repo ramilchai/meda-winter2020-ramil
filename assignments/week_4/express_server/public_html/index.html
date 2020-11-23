@@ -18,9 +18,32 @@
         <p></p>
     </div>
 
+    <div id="history">
+        <p>Last 10 Entries</p>
+        <table></table>
+    </div>
+
     <script>
         $(document).ready(() => {
             console.log("jQuery is ready!");
+
+            $.post("http://localhost:3000/getPreviousEntries", {}, (dataFromServer) => {
+                //console.log(dataFromServer.latestEntries);
+
+                let lastEntry = dataFromServer.latestEntries.pop();
+
+                let winningNumber = lastEntry.winningNumber;
+                let userNumber = lastEntry.number;
+                let time = lastEntry.timeStamp;
+                
+                let html = `<tr>
+                                <td>${userNumber}</td>
+                                <td>${winningNumber}</td>
+                                <td>${time}</td>
+                            </tr>`;
+
+                $("#history table").append(html);
+            });
 
             $("#helloServer").click(() => {
                

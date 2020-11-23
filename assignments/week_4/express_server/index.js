@@ -64,7 +64,7 @@ app.post("/sayHello", (request, response) => {
     history.submissions.push(historyEntry);
 
     fs.writeFileSync("history.json", JSON.stringify(history), "utf-8");
-    
+
     let userWinner = false;
     let outOfRange = false;
 
@@ -81,4 +81,12 @@ app.post("/sayHello", (request, response) => {
     };
 
     response.send(responseObject);
+});
+
+app.post("/getPreviousEntries", (req, res) => {
+    let dataToSendBack = {
+        latestEntries: history.submissions
+    }
+
+    res.send(dataToSendBack);
 });
