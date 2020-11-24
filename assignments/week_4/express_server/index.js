@@ -84,9 +84,12 @@ app.post("/sayHello", (request, response) => {
 });
 
 app.post("/getPreviousEntries", (req, res) => {
+
+    let sliceArray = history.submissions.slice(history.submissions.length - 10);
+
     let dataToSendBack = {
-        latestEntries: history.submissions
-    }
+        latestEntries: sliceArray
+    };
 
     res.send(dataToSendBack);
 });

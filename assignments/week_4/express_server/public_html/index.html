@@ -20,33 +20,20 @@
 
     <div id="history">
         <p>Last 10 Entries</p>
-        <table></table>
+        <table>
+        </table>
     </div>
 
     <script>
         $(document).ready(() => {
             console.log("jQuery is ready!");
 
-            $.post("http://localhost:3000/getPreviousEntries", {}, (dataFromServer) => {
-                //console.log(dataFromServer.latestEntries);
-
-                let lastEntry = dataFromServer.latestEntries.pop();
-
-                let winningNumber = lastEntry.winningNumber;
-                let userNumber = lastEntry.number;
-                let time = lastEntry.timeStamp;
-                
-                let html = `<tr>
-                                <td>${userNumber}</td>
-                                <td>${winningNumber}</td>
-                                <td>${time}</td>
-                            </tr>`;
-
-                $("#history table").append(html);
-            });
-
+            loadLatestEntries();
+            
             $("#helloServer").click(() => {
-               
+                
+                loadLatestEntries();
+
                 //jQuery HTTP POST Request method. First argument is "Where do we send it", second argument "What are we sending", third argument "What do we do when we get a response."
                 let objectToSend = {
                 "message" : "Hello",
@@ -54,6 +41,8 @@
                 };
 
                 $.post("http://localhost:3000/sayHello", objectToSend, (data) => {
+
+                    loadLatestEntries();
                     
                     if(data.error === true) {
                         $("#resultsBox > p").text("Unable to compare as value is out of the range of 1 to 10");
@@ -72,6 +61,42 @@
             });
             
         });
+
+        function loadLatestEntries() {
+            $.post("http://localhost:3000/getPreviousEntries", {}, (dataFromServer) => {
+                //console.log(dataFromServer.latestEntries);
+
+                $("#history table").empty();
+
+                $("history table").append(`
+                <tr>
+                    <th>User's Number</th>
+                    <th>Winning Number</th>
+                    <th>Time Submitted</th>
+                </tr>
+                `);
+
+                for (let i = 0; i < 10; i++) {
+                    let lastEntry = dataFromServer.latestEntries.pop();
+
+                    let winningNumber = lastEntry.winningNumber;
+                    let userNumber = lastEntry.number;
+                    let time = lastEntry.timeStamp;
+        
+                    let dateObject = new Date(time);
+                    let dateString = dateObject.toDateString() + " " + dateObject.toLocaleString();
+
+                    let html = `<tr>
+                                    <td>${userNumber}</td>
+                                    <td>${winningNumber}</td>
+                                    <td>${dateString}</td>
+                                </tr>`;
+
+                    $("#history table").append(html);
+                }
+            });
+        }
+
     </script>
 </body>
 </html>
