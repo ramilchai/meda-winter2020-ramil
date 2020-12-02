@@ -1,0 +1,14 @@
+{
+  "name": "mongoosepractice",
+  "version": "1.0.0",
+  "description": "Practice using Mongoose and MongoDB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ramil",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "^5.11.1"
+  }
+}
