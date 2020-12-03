@@ -7,13 +7,17 @@ const arg = process.argv;
 // object. If it doesn’t, create a JSON file from scratch and creates a new object to work from. You
 // are free to decide on the name of the JSON file.
 
-let jsonFridayTheThirteenth = "";
+let jsonFridayTheThirteenth;
 if (fs.existsSync("jsonFridayThethirteenth.json")) {
     jsonFridayTheThirteenth = fs.readFileSync("jsonFridayTheThirteenth.json", "utf-8");
 } else {
-    fs.writeFileSync("jsonFridayTheThirteenth.json", `{
+    let newObject = {
         "argumentHistory" : []
-    }`, "utf-8");
+    };
+
+    fs.writeFileSync("jsonFridayTheThirteenth.json", JSON.stringify(newObject), "utf-8");
+    
+    jsonFridayTheThirteenth = fs.readFileSync("jsonFridayTheThirteenth.json", "utf-8");
 }
 
 let jsonFridayTheThirteenthConverted = JSON.parse(jsonFridayTheThirteenth);
