@@ -9,6 +9,6 @@
   "author": "Ramil",
   "license": "ISC",
   "dependencies": {
-    "mongoose": "^5.11.1"
+    "mongoose": "^5.11.3"
   }
 }
