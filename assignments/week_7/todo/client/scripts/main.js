@@ -19,9 +19,26 @@ $(document).ready(() => {
             timestamp: Date.now()
         }
 
+        $("#submit").attr("disabled", "disabled");
+        $("#loading-icon").css("visibility", "visible");
+
         $.post(base_url + "newNote", noteObject, (data) => {
             console.log(data.saved);
+
+            if (data.saved === true) {
+                setTimeout(() => {
+                    $("#submit").removeAttr("disabled");
+                    $("#loading-icon").css("visibility", "hidden");
+                    $("#submit-message").text("Successfully saved " + noteObject.title);
+                    setTimeout(() => {
+                        $("#submit-message").text("");
+                    }, 2000);
+                }, 2000);
+                
+            }
         });
+
+        
 
     });
 
