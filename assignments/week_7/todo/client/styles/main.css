@@ -5,3 +5,8 @@ body {
 #loading-icon {
     visibility: hidden;
 }
+
+#message {
+    height: 50px;
+    width: 300px;
+}

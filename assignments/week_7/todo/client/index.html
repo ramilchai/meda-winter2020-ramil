@@ -14,20 +14,42 @@
     
 </head>
 <body>
-    <label for="note-title">Title</label><br />
-    <input type="text" id="note-title"/><br />
-    <label for="note-priority">Priority</label><br />
-    <select id="note-priority">
-            <option value="1">Level 1</option>
-            <option value="2">Level 2</option>
-            <option value="3">Level 3</option>
-            <option value="4">Level 4</option>
-            <option value="5">Level 5</option>
-    </select><br />
-    <label for="note-text">Note</label><br />
-    <textarea rows="10" cols="50" id="note-text"></textarea><br />
-    <button id="submit">Save Todo Item</button>
-    <img id="loading-icon" src="images/822.gif" width="21" height="21" alt="Loading Icon" />
-    <p id="submit-message"></p>
+    <div id="new-note">
+        <h1>Create new To-Do Task</h1>
+        <label for="note-title">Title</label><br />
+        <input type="text" id="note-title"/><br />
+        <label for="note-priority">Priority</label><br />
+        <select id="note-priority">
+                <option value="1">Level 1</option>
+                <option value="2">Level 2</option>
+                <option value="3">Level 3</option>
+                <option value="4">Level 4</option>
+                <option value="5">Level 5</option>
+        </select><br />
+        <label for="note-text">Note</label><br />
+        <textarea rows="10" cols="50" id="note-text"></textarea><br />
+        <button id="submit">Save Todo Item</button>
+        <img id="loading-icon" src="images/822.gif" width="21" height="21" alt="Loading Icon" />
+        <div id="message">
+        <p id="submit-message"></p>
+        </div>
+    </div>
+
+    <div id="note-list">
+        <h1>Current To-Do Tasks</h1>
+        <table id="tasks">
+            <thead>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
 </body>
 </html>
