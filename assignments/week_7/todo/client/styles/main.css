@@ -10,3 +10,16 @@ body {
     height: 50px;
     width: 300px;
 }
+
+#tasks tbody tr td:nth-child(5) {
+    position: absolute;
+}
+
+#tasks tbody tr td img {
+    display: none;
+    position: relative;
+}
+
+#tasks {
+    width: 400px;
+}

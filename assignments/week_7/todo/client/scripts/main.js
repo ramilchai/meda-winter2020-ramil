@@ -6,16 +6,12 @@ $(document).ready(() => {
         console.log(data.list);
 
         for(let i = 0; i < data.list.length; i++) {
-            const html = `
-                    <tr>
-                        <th>${data.list[i].priority}</th>
-                        <th>${data.list[i].title}</th>
-                        <th>${data.list[i].text}</th>
-                    </tr>
-            `;
+            addToList(data.list[i]);
 
-            $("#tasks tbody").append(html);
         }
+
+        refreshDeleteButtons()
+
     });
 
     $("#submit").click(() => {
@@ -47,19 +43,10 @@ $(document).ready(() => {
                     $("#loading-icon").css("visibility", "hidden");
                     $("#submit-message").text("Successfully saved " + noteObject.title);
 
-                    $("#note-title").val("");
-                    $("#note-text").val("");
-                    $("#note-priority").val("1");
+                    addToList(data.savedTask);
+                    refreshDeleteButtons()
 
-                    const html = `
-                    <tr>
-                        <th>${noteObject.priority}</th>
-                        <th>${noteObject.title}</th>
-                        <th>${noteObject.text}</th>
-                    </tr>
-                    `;
-
-                    $("#tasks tbody").append(html);
+                    
 
                     setTimeout(() => {
                         $("#submit-message").text("");
@@ -67,12 +54,45 @@ $(document).ready(() => {
                 }, 2000);
                 
             }
-        });
-
-        
+        });  
 
     });
 
-
-
 });
+
+function addToList(taskObject) {
+    const html = `
+        <tr data-task-id="${taskObject._id}">
+            <td>${taskObject.priority}</td>
+            <td>${taskObject.title}</td>
+            <td>${taskObject.text}</td>
+            <td><button >Delete</button></td>
+            <img src="images/822.gif" width="21" height="21" alt="Loading Icon" />
+         </tr>
+    `;
+
+    $("#tasks tbody").append(html);
+}
+
+function refreshDeleteButtons() {
+    $("#tasks tbody tr td button").click((e) => {
+        
+        $(e.target).attr("disabled", "disabled");
+        $(e.target).parent().next().children("img").fadeIn(600);
+        
+        let taskID = $(e.target).parent().parent().attr("data-task-id");
+        
+        console.log(taskID);
+
+        let actionObject = {
+            id: taskID,
+            action: "delete",
+            data: null 
+        };
+
+        $.post(base_url + "modify", actionObject, (data) => {
+            $(e.target).parent().parent().remove();
+        });
+
+    });
+}

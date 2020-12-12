@@ -55,7 +55,8 @@ app.post("/newNote", (req, res) => {
     newNoteDocument.save((error) => {
         
         const resObject = {
-            saved: true,
+            saved: false,
+            savedTask: newNoteDocument,
             error: null
         };
         
@@ -82,4 +83,22 @@ app.post("/getList", (req, res) => {
             res.send(resObject);
         }
     });
+});
+
+app.post("/modify", (req, res) => {
+
+    let request = req.body;
+
+    if(request.action === "delete") {
+        todoModel.findByIdAndDelete(request.id, (error, deleted) => {
+            if (error) {
+                console.log(error);
+            } else {
+                let response = {
+                    copy: deleted
+                }
+                res.send(response);
+            }
+        });
+    }
 });
